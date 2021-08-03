@@ -6,5 +6,5 @@ const cardMenu = createMenuCardsMarkup(menu);
 ulListMenu.insertAdjacentHTML('beforeend', cardMenu);
 
 function createMenuCardsMarkup(menu) {
-  return menusFoodTpl({ menu });
+  return menusFoodTpl(menu);
 }
