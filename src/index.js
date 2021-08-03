@@ -1,4 +1,3 @@
-import menuFoodTpl from './templates/food-menu.hbs';
 import menusFoodTpl from './templates/food-menus.hbs';
 import menu from './js/menu.json';
 
