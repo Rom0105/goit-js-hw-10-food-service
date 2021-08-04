@@ -1,5 +1,7 @@
 const themeToggle = document.querySelector('#theme-switch-toggle');
 const themeBody = document.querySelector('body');
+themeToggle.addEventListener('change', themeDarkLight);
+themeToggle.addEventListener('change', localTheme);
 
 const Theme = {
   LIGHT: 'light-theme',
@@ -17,4 +19,20 @@ function themeDarkLight() {
   }
 }
 
-themeToggle.addEventListener('change', themeDarkLight);
+function localTheme() {
+  const check = themeToggle.checked;
+
+  if (check) {
+    localStorage.setItem('theme', Theme.DARK);
+  } else {
+    localStorage.removeItem('theme');
+    localStorage.setItem('theme', Theme.LIGHT);
+  }
+}
+
+const themeInLocal = localStorage.getItem('theme');
+
+if (themeInLocal === Theme.DARK) {
+  themeBody.classList.add(Theme.DARK);
+  themeToggle.checked = true;
+}
