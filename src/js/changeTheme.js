@@ -6,7 +6,7 @@ const Theme = {
   DARK: 'dark-theme',
 };
 
-function themeDark() {
+function themeDarkLight() {
   const check = themeToggle.checked;
   if (check) {
     themeBody.classList.add(Theme.DARK);
@@ -17,4 +17,4 @@ function themeDark() {
   }
 }
 
-themeToggle.addEventListener('change', themeDark);
+themeToggle.addEventListener('change', themeDarkLight);
